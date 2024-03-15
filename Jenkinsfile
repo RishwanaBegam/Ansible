@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('****Install Apache****') {
             steps {
-                sh 'ansible-playbook -i inventory.ini -b install_apache.yml'
+                sh 'ansible-playbook -i Inventory/Apache-Installation playbooks/ansible_playbook.yml'
             }
             prinltn('Installing Apache Completed!')
         }
