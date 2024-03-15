@@ -17,3 +17,4 @@
         name: apache2
         state: started
         enabled: yes
+        when: Installed_apache.changed
