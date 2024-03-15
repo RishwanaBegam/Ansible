@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'ansible-playbook -i Inventory/Apache-Installation playbooks/ansible_playbook.yml'
             }
-            prinltn('Installing Apache Completed!')
+            println('Installing Apache Completed!')
         }
     }
 }
