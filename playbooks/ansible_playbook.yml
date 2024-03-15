@@ -11,6 +11,7 @@
       package:
         name: apache2
         state: present
+        register: Installed_apache
     -name: Start Apache 
       service:
         name: apache2
