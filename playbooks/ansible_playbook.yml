@@ -1,0 +1,18 @@
+---
+  -name: Install Apache server
+  -hosts: web_servers
+  -become: yes
+  tasks:
+    -name : Update Cache
+    apt:
+      updae_cache: yes
+      when: os_family == "Debian"
+    -name: Install Apache
+      package:
+        name: apache2
+        state: present
+    -name: Start Apache 
+      service:
+        name: apache2
+        state: started
+        enabled: yes
