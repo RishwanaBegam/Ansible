@@ -5,7 +5,7 @@
   tasks:
     -name : Update Cache
     apt:
-      updae_cache: yes
+      update_cache: yes
       when: os_family == "Debian"
     -name: Install Apache
       package:
