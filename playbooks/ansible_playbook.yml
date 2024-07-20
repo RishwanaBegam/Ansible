@@ -1,0 +1,20 @@
+---
+  -name: Install Apache server      #playbook name      
+  -hosts: web_servers              #group
+  -become: yes                # playbook runs with elevated previleges
+  tasks:
+    -name : Update Cache
+    apt:
+      update_cache: yes
+      when: os_family == "Debian"
+    -name: Install Apache
+      package:
+        name: apache2
+        state: present
+        register: Installed_apache
+    -name: Start Apache 
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+        when: Installed_apache.changed
